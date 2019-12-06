@@ -1,11 +1,18 @@
 # print the longest string in a list
 
-my_list = ['blood', 'air', 'fire'] # define a list
+my_list = ['blood', 'air', 'fire']
 
-def find_longest_word(word_list):  
-    longest_word =  max(word_list, key=len)
-    print(longest_word)
+def longest_string(word_list):
+    longest_len = 0
+    longest_words = []
+    for s in my_list:
+        if len(s) > longest_len:
+            longest_len = len(s)
+            longest_words = [s]
+        elif len(s) == longest_len:
+            longest_words.append(s)
+        return longest_words
 
-find_longest_word(my_list)
-    
+print(longest_string(my_list))
+
     
